@@ -31,9 +31,9 @@ define smtp::use_smarthost() {
                 /^6\..*/: {
                     smtp::use_smarthost::postfix { $name: }
                 }
-                default: { unimplemented() }
+                default: { fail "unimplemented on ${::osfamily} ${::operatingsystemrelease}" }
             }
         }
-        default: { unimplemented() }
+        default: { fail "unimplemented on ${::osfamily}" }
     }
 }

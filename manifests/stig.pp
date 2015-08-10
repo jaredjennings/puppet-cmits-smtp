@@ -70,11 +70,11 @@ class smtp::stig {
                         notify =>  Exec['update_sendmail_config'],
                     }
                 }
-                default: { unimplemented() }
+                default: { fail "unimplemented on ${::osfamily} ${::operatingsystemrelease}" }
             }
         }
 # I don't think Mac OS X runs an SMTP server.
         'Darwin': {}
-        default: { unimplemented() }
+        default: { fail "unimplemented on ${::osfamily}" }
     }
 }

@@ -26,9 +26,9 @@ class smtp::smarthost {
                     class { "${name}::postfix":
                     }
                 }
-                default: { unimplemented() }
+                default: { fail "unimplemented on ${::osfamily} ${::operatingsystemrelease}" }
             }
         }
-        default: { unimplemented() }
+        default: { fail "unimplemented on ${::osfamily}" }
     }
 }
