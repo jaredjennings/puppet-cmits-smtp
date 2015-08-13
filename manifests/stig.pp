@@ -36,7 +36,7 @@ class smtp::stig {
 # \implements{unixsrg}{GEN004360,GEN004370,GEN004380} Control ownership and
 # permissions of the \verb!aliases! file.
     file { "/etc/aliases":
-        owner => root, group => 0, mode => 0644,
+        owner => root, group => 0, mode => '0644',
     }
 # \implements{unixsrg}{GEN004390} Remove extended ACLs on the \verb!aliases!
 # file.
